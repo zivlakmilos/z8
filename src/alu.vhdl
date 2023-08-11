@@ -66,7 +66,7 @@ begin
 
     case op is
       when "00000000" =>
-        o <= a;
+        o <= "00000000";
       when "00000001" =>
         o <= sum;
         fcf <= sumc;
@@ -88,7 +88,7 @@ begin
       when "10000000" =>
         o <= a nand b;
       when others =>
-        o <= a;
+        o <= "00000000";
     end case;
 
     if o = "00000000" then
