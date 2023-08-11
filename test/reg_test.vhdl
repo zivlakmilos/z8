@@ -15,7 +15,8 @@ architecture reg_test of reg_test is
       clk: in std_logic;
       clr: in std_logic;
 
-      q: out std_logic_vector(7 downto 0)
+      q: out std_logic_vector(7 downto 0);
+      dq: out std_logic_vector(7 downto 0)
     );
   end component;
 
@@ -26,6 +27,7 @@ architecture reg_test of reg_test is
   signal clr: std_logic := '0';
 
   signal q: std_logic_vector(7 downto 0) := "00000000";
+  signal dq: std_logic_vector(7 downto 0) := "00000000";
 begin
   r: reg
   port map (
@@ -35,7 +37,8 @@ begin
     clk => clk,
     clr => clr,
 
-    q => q
+    q => q,
+    dq => dq
   );
 
   process

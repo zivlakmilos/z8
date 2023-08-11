@@ -10,7 +10,8 @@ entity reg is
     clk: in std_logic;
     clr: in std_logic;
 
-    q: out std_logic_vector(7 downto 0)
+    q: out std_logic_vector(7 downto 0);
+    dq: out std_logic_vector(7 downto 0)
   );
 end reg;
 
@@ -26,5 +27,6 @@ begin
     end if;
 
     q <= v and eo & eo & eo & eo & eo & eo & eo & eo;
+    dq <= v;
   end process;
 end reg;
