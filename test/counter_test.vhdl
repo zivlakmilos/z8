@@ -12,6 +12,7 @@ architecture counter_test of counter_test is
       clk: in std_logic;
       clr: in std_logic;
       jmp: in std_logic;
+      inc: in std_logic;
       eo: in std_logic;
       addr: in std_logic_vector(7 downto 0);
 
@@ -22,6 +23,7 @@ architecture counter_test of counter_test is
   signal clk: std_logic := '0';
   signal clr: std_logic := '0';
   signal jmp: std_logic := '0';
+  signal inc: std_logic := '0';
   signal eo: std_logic := '0';
   signal addr: std_logic_vector(7 downto 0) := "00000000";
 
@@ -32,6 +34,7 @@ begin
     clk => clk,
     clr => clr,
     jmp => jmp,
+    inc => inc,
     eo => eo,
     addr => addr,
 
@@ -44,6 +47,7 @@ begin
   begin
     eo <= '1';
     clr <= '1';
+    inc <= '1';
     wait for 2 ns;
     clr <= '0';
     wait for 3 ns;
@@ -57,6 +61,9 @@ begin
     addr <= "00000000";
     eo <= '1';
     wait for 100 ns;
+    inc <= '0';
+    wait for 100 ns;
+    inc <= '1';
 
     wait;
   end process;

@@ -7,6 +7,7 @@ entity counter is
     clk: in std_logic;
     clr: in std_logic;
     jmp: in std_logic;
+    inc: in std_logic;
     eo: in std_logic;
     addr: in std_logic_vector(7 downto 0);
 
@@ -44,7 +45,7 @@ begin
     elsif clk'event and clk = '1' then
       if jmp = '1' then
         data <= addr;
-      else
+      elsif inc = '1' then
         data <= sum;
       end if;
     end if;
