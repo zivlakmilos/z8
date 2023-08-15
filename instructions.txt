@@ -17,3 +17,4 @@ JMP         0x31        Address     Jump
 JMPZ        0x32        Address     Jump if zero
 JMPNZ       0x33        Address     Jump if not zero
 JMPC        0x34        Address     Jump if carry
+HLT         0xFF                    Halt
