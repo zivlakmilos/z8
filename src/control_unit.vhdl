@@ -9,6 +9,15 @@ entity control_unit is
     inst: in std_logic_vector(7 downto 0);
     addr: in std_logic_vector(7 downto 0);
 
+    eadd: out std_logic;
+    esub: out std_logic;
+    enot: out std_logic;
+    eand: out std_logic;
+    eor: out std_logic;
+    exor: out std_logic;
+    enor: out std_logic;
+    enand: out std_logic;
+
     ai: out std_logic;
     ao: out std_logic;
     bi: out std_logic;
@@ -145,6 +154,83 @@ begin
             end if;
           when "00100001" =>      -- NOT
             if step = "00000100" then
+              enot <= '1';
+              oi <= '1';
+            elsif step = "00000101" then
+              oo <= '1';
+              ai <= '1';
+            elsif step = "00000110" then
+              rst <= '1';
+            end if;
+          when "00100010" =>      -- AND
+            if step = "00000100" then
+              eand <= '1';
+              oi <= '1';
+            elsif step = "00000101" then
+              oo <= '1';
+              ai <= '1';
+            elsif step = "00000110" then
+              rst <= '1';
+            end if;
+          when "00100011" =>      -- OR
+            if step = "00000100" then
+              eor <= '1';
+              oi <= '1';
+            elsif step = "00000101" then
+              oo <= '1';
+              ai <= '1';
+            elsif step = "00000110" then
+              rst <= '1';
+            end if;
+          when "00100100" =>      -- XOR
+            if step = "00000100" then
+              exor <= '1';
+              oi <= '1';
+            elsif step = "00000101" then
+              oo <= '1';
+              ai <= '1';
+            elsif step = "00000110" then
+              rst <= '1';
+            end if;
+          when "00100101" =>      -- NAND
+            if step = "00000100" then
+              enand <= '1';
+              oi <= '1';
+            elsif step = "00000101" then
+              oo <= '1';
+              ai <= '1';
+            elsif step = "00000110" then
+              rst <= '1';
+            end if;
+          when "00100110" =>      -- NOR
+            if step = "00000100" then
+              enor <= '1';
+              oi <= '1';
+            elsif step = "00000101" then
+              oo <= '1';
+              ai <= '1';
+            elsif step = "00000110" then
+              rst <= '1';
+            end if;
+          when "00100111" =>      -- ADD
+            if step = "00000100" then
+              eadd <= '1';
+              oi <= '1';
+            elsif step = "00000101" then
+              oo <= '1';
+              ai <= '1';
+            elsif step = "00000110" then
+              rst <= '1';
+            end if;
+          when "00101000" =>      -- ADD
+            if step = "00000100" then
+              esub <= '1';
+              oi <= '1';
+            elsif step = "00000101" then
+              oo <= '1';
+              ai <= '1';
+            elsif step = "00000110" then
+              rst <= '1';
             end if;
         end case;
       end if;
