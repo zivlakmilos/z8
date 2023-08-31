@@ -1,9 +1,4 @@
-# z8
-Z8 - Simple 8bit CPU
-
-## CPU Architecture
-
-### Instructions
+## Instructions
 
 |-----------------------------------------------------------------------------------------|-----------------------------------|
 |   ASM   |           OPCODE            |   REG   |           VALUE / ADDRESS             | Description                       |
@@ -44,7 +39,7 @@ Z8 - Simple 8bit CPU
 
 
 
-### Registers
+## Registers
 
 |-------------------------------------------------------------|
 | Register  | r1 | r0 | Description                           |
